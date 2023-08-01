@@ -12,7 +12,6 @@ export class App extends Component{
   }
 
   addContact = data =>{
-    // console.log(data);
     const {name, number} = data;
     const todo = {
       id: nanoid(),
@@ -33,12 +32,10 @@ export class App extends Component{
         contacts: [todo, ...prevState.contacts]
       }))
     }
-    console.log(data);
   }
 
   findContact = e => {
     this.setState({ filter: e.currentTarget.value });
-    // console.log(this.state.contacts.filter(contact => contact.name))
   }
 
   onDelete = (id) => {
