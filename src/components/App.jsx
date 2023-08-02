@@ -21,9 +21,11 @@ export class App extends Component{
 
     const checkCont = this.state.contacts
     .filter(contact => contact.name)
-    .map(contact => contact.name)
+    .map(contact => contact.name.toLowerCase())
 
-    if(checkCont.includes(data.name)){
+    // const normalizedCheck = checkCont
+
+    if(checkCont.includes(data.name.toLowerCase())){
       Notiflix.Notify.failure(`${data.name} is already in contacts`);
       // alert(`${data.name} is already in contacts`);
     }
